@@ -1,4 +1,4 @@
-package push
+package logup
 
 import (
 	"bytes"
