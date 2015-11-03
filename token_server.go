@@ -22,9 +22,9 @@ func init() {
 }
 
 func main() {
-	http.HandleFunc("/logup", logupHandler)
+	http.HandleFunc("/", logupHandler)
 	http.HandleFunc("/token/", checktokenHandler)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":80", nil)
 }
 
 func logupHandler(rw http.ResponseWriter, req *http.Request) {
@@ -33,7 +33,7 @@ func logupHandler(rw http.ResponseWriter, req *http.Request) {
 	token := logup.GenToken(&now)
 	fmt.Println(token)
 	tokenM[token] = req.RemoteAddr + "[" + count.String() + "]"
-	rw.Write(goutils.ToByte(fmt.Sprintf("http://localhost:8080/token/%s", token)))
+	rw.Write(goutils.ToByte(fmt.Sprintf("http://localhost:80/token/%s", token)))
 }
 
 func checktokenHandler(rw http.ResponseWriter, req *http.Request) {
