@@ -14,7 +14,15 @@ func init() {
 	Conn_Keeper = peers.NewConnKeeper()
 }
 
+func screen() {
+	cmd := exc.NewCMD("xwd -root -out screen.xwd").Debug()
+	cmd.ExecuteAfter(5)
+	cmd.Reset("convert screen.xwd screen.png").Execute()
+}
+
 func main() {
+	screen()
+	return
 	listener, err := net.ListenTCP("tcp", &net.TCPAddr{Port: 8080})
 	if exc.Checkerr(err) {
 		return
