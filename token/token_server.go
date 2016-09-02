@@ -3,10 +3,10 @@ package main
 import (
 	"expvar"
 	"fmt"
-	"github.com/shaalx/push/logup"
+	"github.com/toukii/push/logup"
 	"net/http"
 
-	"github.com/shaalx/goutils"
+	"github.com/toukii/goutils"
 	"path/filepath"
 	"time"
 )
