@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/everfore/exc"
-	"github.com/shaalx/oschat/peers"
+	"github.com/toukii/oschat/peers"
 	"net"
 	"time"
 )
